@@ -1,10 +1,7 @@
 <template>
   <swiper :options="swiperOptions">
-    <swiper-slide class="container-swiper">
-      <img class="swiper-img" src="https://th.bing.com/th/id/OIP.T2USvl6qerPRnWGM7XUydQHaD5?pid=Api&rs=1">
-    </swiper-slide>
-    <swiper-slide>
-      <img class="swiper-img" src="https://th.bing.com/th/id/OIP.MASmSGUEiRwOc86zsRb1OwHaEK?pid=Api&rs=1">
+    <swiper-slide class="container-swiper" v-for="item of swiperList" :key="item.id">
+      <img class="swiper-img" :src="item.imgUrl">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
@@ -23,7 +20,17 @@ export default {
           stopOnLastSlide: false
         },
         loop: true
-      }
+      },
+      swiperList: [
+        {
+          id: 1,
+          imgUrl: 'https://th.bing.com/th/id/OIP.T2USvl6qerPRnWGM7XUydQHaD5?pid=Api&rs=1'
+        },
+        {
+          id: 2,
+          imgUrl: 'https://th.bing.com/th/id/OIP.MASmSGUEiRwOc86zsRb1OwHaEK?pid=Api&rs=1'
+        }
+      ]
     }
   }
 }
