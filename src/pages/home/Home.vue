@@ -1,10 +1,14 @@
 <template>
- <div>home</div>
+ <HomeHeader></HomeHeader>
 </template>
 
 <script>
+import HomeHeader from './components/HomeHeader'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeHeader
+  }
 }
 </script>
 
