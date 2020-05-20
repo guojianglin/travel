@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommandList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wraper">
           <img :src="item.imgUrl" class="item-img">
         </div>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: 'Weekend',
+  props: {
+    list: Array
+  },
   data () {
     return {
       recommandList: [
@@ -74,7 +77,7 @@ export default {
 .item-img-wraper
   overflow hidden
   height 0
-  padding-bottom 33.9%
+  padding-bottom 37.09%
   .item-img
     width 100%
 .item-title

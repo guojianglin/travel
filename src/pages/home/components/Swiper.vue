@@ -1,6 +1,6 @@
 <template>
-  <swiper :options="swiperOptions">
-    <swiper-slide class="container-swiper" v-for="item of swiperList" :key="item.id">
+  <swiper :options="swiperOptions" v-if="showSwiper">
+    <swiper-slide class="container-swiper" v-for="item of list" :key="item.id">
       <img class="swiper-img" :src="item.imgUrl">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -10,6 +10,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOptions: {
@@ -20,17 +23,12 @@ export default {
           stopOnLastSlide: false
         },
         loop: true
-      },
-      swiperList: [
-        {
-          id: 1,
-          imgUrl: 'https://th.bing.com/th/id/OIP.T2USvl6qerPRnWGM7XUydQHaD5?pid=Api&rs=1'
-        },
-        {
-          id: 2,
-          imgUrl: 'https://th.bing.com/th/id/OIP.MASmSGUEiRwOc86zsRb1OwHaEK?pid=Api&rs=1'
-        }
-      ]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }
