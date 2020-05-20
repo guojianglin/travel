@@ -6,8 +6,13 @@
     <div class="header-input">
       <span class="iconfont iconseach"></span>
       输入城市/景点/游玩主题
+    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{ city }}
+        <div class="iconfont icondownarrow icon-arrow"></div>
       </div>
-    <div class="header-right">{{ city }}<div class="iconfont icondownarrow icon-arrow"></div></div>
+    </router-link>
   </div>
 </template>
 
@@ -29,7 +34,7 @@ export default {
   color: #ffffff
 
   .header-left
-    width: .64rem
+    width: $headerHeight
     .back-icon
       font-size .4rem
       text-align: center
@@ -47,6 +52,7 @@ export default {
   .header-right
     width: 1.24rem
     text-align: center
+    color #ffffff
     .icon-arrow
       display inline-block
       font-size .13rem
