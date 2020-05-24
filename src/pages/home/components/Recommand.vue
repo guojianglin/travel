@@ -2,14 +2,14 @@
   <div>
     <div class="title">猜你喜欢</div>
     <ul>
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <router-link tag="li" :to="'/detail/' + item.id" class="item border-bottom" v-for="item of list" :key="item.id">
         <img :src="item.imgUrl" class="item-img">
         <div class="item-info">
           <div class="item-title">{{ item.title }}</div>
           <div class="item-desc">{{ item.desc }}</div>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
